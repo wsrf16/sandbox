@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: seata-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mecs.com:3306/seata_sample?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&autoReconnect=false&allowMultiQueries=true&useCursorFetch=true
+    username: root
+    password: 1111
+    connection-timeout: 2000
+    mybatis:
+      mapper-locations: classpath:config/mapper/*.xml
+
+seata:
+  application-id: seata-app
+  # 开启数据源自动代理，默认true
+  enable-auto-data-source-proxy: true
+  # 代理方式，默认false
+  useJdkProxy: false
+
+  registry:
+#    type: file
+    type: nacos
+    nacos:
+      application:  ${spring.application.name}
+      server-addr: mecs.com:8848    # 127.0.0.1:8801,127.0.0.1:8802,127.0.0.1:8803
+      group: SEATA_GROUP
+      namespace: ""
+      username: "nacos"
+      password: "nacos"
+
+
+  config:
+#    type: file
+    type: nacos
+    nacos:
+      server-addr: mecs.com:8848    # 127.0.0.1:8801,127.0.0.1:8802,127.0.0.1:8803
+      group: SEATA_GROUP
+#      namespace: ""
+      username: "nacos"
+      password: "nacos"
+
+
+
+
+  service:
+    # TC服务列表（附录2）。仅注册中心为registry.type=file时会用到，其他时候不读
+    grouplist:
+      default: 49.235.220.112:8091
+    vgroup-mapping:
+      # my_test_tx_group为分组，配置项值为tc集群名称
+      my_test_tx_group: default
+  # seata 事务组编号 用于TC集群名
+  tx-service-group: my_test_tx_group
+

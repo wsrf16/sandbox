@@ -1,0 +1,17 @@
+server:
+  port: 8761
+
+
+eureka:
+  server:
+    enable-self-preservation: false
+    response-cache-update-interval-ms: 300000
+    eviction-interval-timer-in-ms: 3000
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    registry-fetch-interval-seconds: 10
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

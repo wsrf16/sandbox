@@ -1,0 +1,57 @@
+server:
+  port: 9000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: service-zipkin-server
+  sleuth:
+    sampler:
+      percentage: 1.0
+      probability: 1.0
+  main:
+    allow-bean-definition-overriding: true
+
+
+#  datasource:
+#    url: jdbc:mysql://192.168.71.254:3306/zipkin?autoReconnect=true
+#    username: root
+#    password: 1
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+zipkin:
+#  ui:
+#    enabled: false
+  collector:
+    rabbitmq:
+      addresses: 192.168.71.254
+      port: 5672
+      username: admin
+      password: admin
+      virtual-host: /
+      queue: zipkin
+  storage:
+    StorageComponent: elasticsearch
+    type: elasticsearch  #mysql
+    elasticsearch:
+      hosts: 10.37.251.53:9230
+      cluster: es-log-analysis-dev
+      index: zipkin
+      maxHttpHeaderSize: 8192
+      index-shards: 5
+      index-replicas: 1
+      max-requests: 30
+
+
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
+#management.endpoints.web.exposure.include=*

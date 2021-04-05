@@ -1,0 +1,36 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+
+#eureka.server.enable-self-preservation	# 设为false，关闭自我保护
+#eureka.server.eviction-interval-timer-in-ms # 清理间隔（单位毫秒，默认是60*1000）
+
+
+server:
+  port: 8763
+
+spring:
+  application:
+    name: service-hi
+  zipkin:
+    # 通过rabbitmq
+#    rabbitmq:
+#      queue: zipkin
+    # 通过http
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
+      probability: 1.0
+
+  rabbitmq:
+    host: 192.168.71.254
+    port: 5672
+    username: admin
+    password: admin
+
+
