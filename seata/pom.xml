@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.aio.portable</groupId>
             <artifactId>spring-boot-starter-swiss</artifactId>
-            <version>1.1.15-SNAPSHOT</version>
+            <version>1.1.16-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -58,6 +58,11 @@
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
             <version>2.2.5.RELEASE</version>
             <exclusions>
+                <!-- 排除依赖 指定版本和服务器端一致 -->
+                <exclusion>
+                    <groupId>io.seata</groupId>
+                    <artifactId>seata-all</artifactId>
+                </exclusion>
                 <exclusion>
                     <groupId>io.seata</groupId>
                     <artifactId>seata-spring-boot-starter</artifactId>

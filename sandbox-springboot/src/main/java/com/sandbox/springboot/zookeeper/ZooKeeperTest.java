@@ -1,6 +1,6 @@
 package com.sandbox.springboot.zookeeper;
 
-import com.aio.portable.swiss.module.zookeeper.ZooKeeperSugar;
+import com.aio.portable.swiss.middleware.zookeeper.ZooKeeperSugar;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;

@@ -1,6 +1,6 @@
 package com.sandbox.console.mynetty.server;
 
-import com.aio.portable.swiss.suite.net.protocol.tcp.netty.NettySugar;
+import com.aio.portable.swiss.suite.net.protocol.rpc.netty.NettySugar;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.*;

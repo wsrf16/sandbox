@@ -1,3 +1,7 @@
+-- DROP SCHEMA IF EXISTS `seata`;
+CREATE SCHEMA IF NOT EXISTS `seata` DEFAULT CHARACTER SET utf8 ;
+USE `seata`;
+
 -- -------------------------------- The script used when storeMode is 'db' --------------------------------
 -- the table to store GlobalSession data
 CREATE TABLE IF NOT EXISTS `global_table`

@@ -1,0 +1,22 @@
+
+
+spring:
+  application:
+    name: service-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.133.133:8848
+  rest:
+    agent:
+      enabled: true
+      host: 127.0.0.1
+      port: 8888
+
+server:
+  port: 8081
+
+
+#service-order:
+#  ribbon:
+#    listOfServers: localhost:8000, localhost:8001

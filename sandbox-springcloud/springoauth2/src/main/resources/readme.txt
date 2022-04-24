@@ -1,6 +1,8 @@
 1.数据准备，在下命令行下执行：mysql -uroot -p123456<./schema.sql，创建表格并初始化用户认证数据
 2.启动服务器程序
 3.获取授权码：http://localhost:8080/oauth/authorize?client_id=client&response_type=code&redirect_uri=http://www.baidu.com
+curl -XGET "http://localhost:8080/oauth/authorize?client_id=client&response_type=code&redirect_uri=http://www.baidu.com"
+
 4.获取令牌：curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code&redirect_uri=http://www.baidu.com&code=q5khAe" "http://client:secret@localhost:8080/oauth/token"
 5.访问资源：
 （1）如果是

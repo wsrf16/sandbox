@@ -1,6 +1,6 @@
 package com.sandbox.console.ng;
 
-import com.aio.portable.swiss.module.nginx.NginxConfig;
+import com.aio.portable.swiss.middleware.nginx.NginxConfig;
 import com.github.odiszapc.nginxparser.NgxBlock;
 import com.github.odiszapc.nginxparser.NgxConfig;
 import com.github.odiszapc.nginxparser.NgxEntry;

@@ -10,7 +10,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
-@Service("defaultAuthenticationProvider")
+//@Service("defaultAuthenticationProvider")
 public class DefaultAuthenticationProvider implements AuthenticationProvider {
     @Autowired
     @Qualifier("com.sandbox.demo.defaultoauth.UserService")

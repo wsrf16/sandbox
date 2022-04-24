@@ -22,14 +22,12 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityAdapter extends WebSecurityConfigurerAdapter {
+    @Autowired
+    @Qualifier("customAuthenticationProvider")
+    private AuthenticationProvider authenticationProvider;
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        authenticationProvider = choose();
-        /**
-         *  注入AuthenticationProvider的两种方式：
-         *  第一种：直接定义一个AuthenticationProvider，并标注@Service，执行时会自动注入该AuthenticationProvider
-         *  第二种：在此手动指定AuthenticationProvider
-         */
          auth.authenticationProvider(authenticationProvider);
 
         // 如果不注入AuthenticationProvider，也可以注入UserDetailsService
@@ -127,9 +125,7 @@ public class WebSecurityAdapter extends WebSecurityConfigurerAdapter {
                 .antMatchers("/favor.ico");
     }
 
-    @Autowired
-    @Qualifier("customAuthenticationProvider")
-    private AuthenticationProvider authenticationProvider;
+
     /**
      * 需要配置这个支持password模式
      * support password grant type

@@ -13,9 +13,9 @@ File Encoding         : 65001
 Date: 2021-03-28 23:39:47
 */
 
-DROP SCHEMA IF EXISTS seata_sample;
-CREATE SCHEMA seata_sample;
-USE seata_sample;
+-- DROP SCHEMA IF EXISTS `seata_sample`;
+CREATE SCHEMA IF NOT EXISTS `seata_sample` DEFAULT CHARACTER SET utf8 ;
+USE `seata_sample`;
 
 -- SET FOREIGN_KEY_CHECKS=0;
 

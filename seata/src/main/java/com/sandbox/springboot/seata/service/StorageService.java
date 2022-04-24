@@ -1,7 +1,7 @@
 package com.sandbox.springboot.seata.service;
 
 import com.aio.portable.swiss.suite.bean.BeanSugar;
-import com.aio.portable.swiss.suite.storage.rds.jpa.JPASugar;
+import com.aio.portable.swiss.suite.storage.db.jpa.JPASugar;
 import com.sandbox.springboot.seata.model.Order;
 import com.sandbox.springboot.seata.model.Storage;
 import com.sandbox.springboot.seata.repository.OrderRepository;

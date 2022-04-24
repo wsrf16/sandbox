@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("customAuthenticationProvider")
+//@Service("customAuthenticationProvider")
 public class CustomAuthenticationProvider implements AuthenticationProvider {
     @Autowired
 //    @Qualifier("com.sandbox.demo.customoauth.UserService")

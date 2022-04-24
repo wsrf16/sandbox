@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 //import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Slf4j
@@ -30,6 +31,10 @@ public class SpringbootSandboxApplication {
 		logger.info("SpringbootBackyardApplication start.^_^2");
 	}
 
+	@Bean(initMethod = "postConstruct",destroyMethod = "preDestroy")
+	public TestInitOrDispose testInitOrDispose(){
+		return new TestInitOrDispose();
+	}
 
 //	@Bean
 //	public FilterRegistrationBean indexFilterRegistration() {

@@ -1,10 +1,11 @@
 package com.sandbox.console;
 
-import com.aio.portable.swiss.suite.storage.nosql.file.FilePO;
+import com.aio.portable.swiss.suite.storage.persistence.file.FilePO;
 import com.sandbox.console.async.CallableTest;
 import com.sandbox.console.buddy.sample.BuddyMysqlSample;
 import com.sandbox.console.buddy.sample.BuddySampleA;
 import com.sandbox.console.ng.Ngx;
+import com.sandbox.console.volatile1.VolatileTest;
 
 import java.util.*;
 
@@ -14,8 +15,12 @@ public class Main {
     // -javaagent:D:\NutDisk\Program\Resource\Library\Java\_solution\Project\sandbox\sandbox-javaagent\target\sandbox-javaagent-0.0.1-SNAPSHOT.jar=Hello
     // -javaagent:./sandbox-javaagent/target/sandbox-javaagent-0.0.1-SNAPSHOT.jar=Hello
     public static void main(String[] args) throws Exception {
-        if (1 == 1)
+        int a = 1;
+        if (1 == 1) {
+            VolatileTest.todo();
+            Thread.sleep(5000);
             return;
+        }
 
         List<String> list = new ArrayList<>();
         list.add("1");

@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Repository//("com.sandbox.demo.customoauth.UserRepository")
 public class UserRepository {
-    private Set<UserDetails> users = new HashSet<>();
+    private final static Set<UserDetails> users = new HashSet<UserDetails>();
 
     //@Select("select id, user_name as userName, email, password, role_string as roleString from account where user_name=#{user_name}")
     public UserRepository() {

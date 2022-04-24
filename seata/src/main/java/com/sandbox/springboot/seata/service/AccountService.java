@@ -1,6 +1,6 @@
 package com.sandbox.springboot.seata.service;
 
-import com.aio.portable.swiss.suite.storage.rds.jpa.JPASugar;
+import com.aio.portable.swiss.suite.storage.db.jpa.JPASugar;
 import com.sandbox.springboot.seata.model.Account;
 import com.sandbox.springboot.seata.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
